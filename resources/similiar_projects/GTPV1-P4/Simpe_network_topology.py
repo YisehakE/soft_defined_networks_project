@@ -128,7 +128,7 @@ def main():
 
     sleep(1)
 
-    print "Ready !"
+    print("Ready !")
 
     CLI( net )
     net.stop()
