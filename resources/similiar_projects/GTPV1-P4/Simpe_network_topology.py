@@ -70,7 +70,7 @@ class SingleSwitchTopo(Topo):
         self.addLink(switch, switch1)
         self.addLink(switch1, switch2)
 
-        for h in xrange(n):
+        for h in range(n):
             if h == 0 or h == 1 :
                 host = self.addHost('h%d' % (h + 1),
                                     ip = "10.0.0.1%d/24" % h,
@@ -110,11 +110,11 @@ def main():
     net.start()
 
 
-    sw_mac = ["00:aa:bb:00:00:%02x" % n for n in xrange(num_hosts)]
+    sw_mac = ["00:aa:bb:00:00:%02x" % n for n in range(num_hosts)]
 
-    sw_addr = ["10.0.%d.1" % n for n in xrange(num_hosts)]
+    sw_addr = ["10.0.%d.1" % n for n in range(num_hosts)]
 
-    for n in xrange(num_hosts):
+    for n in range(num_hosts):
         h = net.get('h%d' % (n + 1))
         if mode == "l2":
             h.setDefaultRoute("dev eth0")
@@ -122,7 +122,7 @@ def main():
             h.setARP(sw_addr[n], sw_mac[n])
             h.setDefaultRoute("dev eth0 via %s" % sw_addr[n])
 
-    for n in xrange(num_hosts):
+    for n in range(num_hosts):
         h = net.get('h%d' % (n + 1))
         h.describe()
 
