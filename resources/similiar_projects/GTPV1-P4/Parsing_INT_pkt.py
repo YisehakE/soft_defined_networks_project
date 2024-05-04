@@ -21,7 +21,7 @@ switch_id = None
 period=0.5
 
 toDB=1
-ipdb='ip address'
+ipdb='http://influxdb:8086/'
 db="INT-GTP"
 client=None
 drop=1
