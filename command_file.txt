@@ -11,3 +11,15 @@ echo "deb http://download.opensuse.org/repositories/home:/p4lang/xUbuntu_${DISTR
 curl -fsSL https://download.opensuse.org/repositories/home:p4lang/xUbuntu_${DISTRIB_RELEASE}/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_p4lang.gpg > /dev/null
 sudo apt-get update
 sudo apt install p4lang-p4c
+
+
+sudo apt-get install cmake g++ git automake libtool libgc-dev bison flex \
+libfl-dev libboost-dev libboost-iostreams-dev \
+libboost-graph-dev llvm pkg-config python3 python3-pip \
+tcpdump
+
+pip3 install --user -r requirements.txt
+
+sudo apt-get install -y doxygen graphviz texlive-full
+
+pip3 install --user cmake==3.16.3
