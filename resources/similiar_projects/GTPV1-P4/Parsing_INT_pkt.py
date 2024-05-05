@@ -97,12 +97,12 @@ def main():
                 if drop:
                    client.drop_database(db)
                 client.create_database(db)
-        print "tep1 ok"
+        print("tep1 ok")
         n = 1
         N = int(rate) * period
-        print "Sniffing packets at port: "+ interface + " at " + protocol +" port: "+ port_selected +" numbers of pkts: " + str(N) + " cycles: "+ str(cycle)
+        print("Sniffing packets at port: "+ interface + " at " + protocol +" port: "+ port_selected +" numbers of pkts: " + str(N) + " cycles: "+ str(cycle))
     except:
-        print "Usage: sudo python Parsing_INT_pkt.py <name_inteface> <protocol> <udp/tcp port> <n packets> <n cycle>"
+        print("Usage: sudo python Parsing_INT_pkt.py <name_inteface> <protocol> <udp/tcp port> <n packets> <n cycle>")
         sys.exit(1)
     while True:
       try:
@@ -120,11 +120,11 @@ def main():
         #print str(hop_latency_1_max) , str(hop_latency_2_max), str(hop_latency_1), str(hop_latency_2)
         #print "cycle", n
         if n == cycle and n != 0:
-          print 'Interrupted! cycle number', n
+          print('Interrupted! cycle number', n)
           sys.exit(1)
         n = n+1
       except KeyboardInterrupt:
-          print 'interrupted!'
+          print('interrupted!')
           sys.exit(1)
             
                         
