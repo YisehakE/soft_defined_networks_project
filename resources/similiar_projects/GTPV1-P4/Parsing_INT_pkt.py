@@ -100,8 +100,9 @@ def main():
         n = 1
         N = int(rate) * period
         print("Sniffing packets at port: "+ interface + " at " + protocol +" port: "+ port_selected +" numbers of pkts: " + str(N) + " cycles: "+ str(cycle))
-    except:
+    except Exception as e:
         print("Usage: sudo python Parsing_INT_pkt.py <name_inteface> <protocol> <udp/tcp port> <n packets> <n cycle>")
+        print("Error: ", e)
         sys.exit(1)
     while True:
       try:
