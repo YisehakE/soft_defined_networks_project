@@ -20,7 +20,7 @@ switch_id = None
 period=0.5
 
 toDB=1
-ipdb='http://localhost'
+ipdb='https://influx-prod-13-prod-us-east-0.grafana.net/'
 # ipdb='https://influx-prod-13-prod-us-east-0.grafana.net'
 
 db="INT-GTP"
