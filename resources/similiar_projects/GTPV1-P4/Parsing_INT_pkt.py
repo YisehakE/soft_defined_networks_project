@@ -6,11 +6,9 @@
 import binascii
 from scapy.all import *
 import sys
-import keyboard
-import os
 import datetime
 import influxdb
-import time
+
 
 hop_latency_1 = 0
 hop_latency_2 = 0
