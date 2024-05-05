@@ -1,5 +1,6 @@
-#sudo python Parsing_INT_pkt.py eth1 udp 54321 1000 0
-#sudo python Parsing_INT_pkt.py eth2 udp 54321 1000 0
+#sudo python Parsing_INT_pkt.py eth1       udp        54321       1000    0
+#sudo python Parsing_INT_pkt.py eth2       udp        54321       1000    0
+                            # interface, protocol, port_selected, rate, cycle
 
 
 import binascii
