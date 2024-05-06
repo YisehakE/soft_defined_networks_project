@@ -7,3 +7,4 @@
 
 [In-Band Network Telemetry with ONOS and P4 (Demo & Lab)](https://www.youtube.com/watch?v=sbiNWCvr7u0)
 
+[What is In-Band Network Telemetry?](https://codilime.com/blog/in-band-network-telemetry-what-is-it-all-about/)
