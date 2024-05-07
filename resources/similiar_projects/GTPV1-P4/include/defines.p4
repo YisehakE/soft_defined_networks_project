@@ -7,7 +7,7 @@
 #define IP_VERSION_4 4w4
 #define MAX_PORTS 511
 
-//REPORT
+// REPORT
 #define ETH_REPORT_IPV4 0x1212
 #define IP_PROTO_TCP 8w6
 #define IPV4_IHL_MIN 4w5

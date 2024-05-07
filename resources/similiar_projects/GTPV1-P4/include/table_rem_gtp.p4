@@ -25,7 +25,6 @@ control table_rem_gtp(inout headers_t hdr,
 
         standard_metadata.egress_spec = port;
         hdr.gtp_header.teid = teid;
-
         local_metadata.int_meta.report = report;
     }
 

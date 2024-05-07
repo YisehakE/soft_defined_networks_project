@@ -1,4 +1,3 @@
-/* -*- P4_16 -*- */
 #ifndef __CUSTOM_HEADERS__
 #define __CUSTOM_HEADERS__
 
@@ -9,18 +8,18 @@
 
 // GTP v1 header
 header gtp_header_t {
-    bit<3>  ver;
-    bit<1>  pt;
-    bit<1>  rsvd;
-    bit<1>  e;
-    bit<1>  s;
-    bit<1>  pn;
-    bit<8>  msgtype;
-    bit<16> total_len;
-    bit<32> teid;
-    //bit<16> sequence_number; 
-    //bit<8>  npdu; 
-    //bit<8>  next_ext_hdr;      // optional
+    bit<3>  ver;             // Version
+    bit<1>  pt;              // Protocol Type
+    bit<1>  rsvd;            // Reserved
+    bit<1>  e;               // Extension Header Flag
+    bit<1>  s;               // Sequence Number Flag
+    bit<1>  pn;              // N-PDU Number Flag
+    bit<8>  msgtype;         // Message Type
+    bit<16> total_len;       // Total Length
+    bit<32> teid;            // Tunnel Endpoint Identifier
+    //bit<16> sequence_number; // Sequence Number
+    //bit<8>  npdu;           // N-PDU Number
+    //bit<8>  next_ext_hdr;   // Next Extension Header (optional)
 }
 
 

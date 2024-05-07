@@ -18,19 +18,15 @@ control table0_control(inout headers_t hdr,
 
     table table0 {
         key = {
-    
             hdr.ethernet.ether_type          : exact;
             hdr.ethernet.src_addr            : exact;
             hdr.ethernet.dst_addr            : exact;
-
         }
         actions = {
             set_egress;
             NoAction;
-         
         }
         const default_action = NoAction();
-        
     }
 
     apply {

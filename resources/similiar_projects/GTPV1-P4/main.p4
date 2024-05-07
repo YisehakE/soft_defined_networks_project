@@ -15,10 +15,6 @@
 #include "include/table_rem_gtp.p4"
 #include "include/int_report.p4"
 
-
-
-
-
 control ingress (
     inout headers_t hdr,
     inout local_metadata_t local_metadata,
@@ -48,7 +44,6 @@ control egress (
     inout standard_metadata_t standard_metadata) {
     
     apply {
-
     	if (IS_I2E_CLONE(standard_metadata)) {
                 process_int_report.apply(hdr, local_metadata, standard_metadata);
             }

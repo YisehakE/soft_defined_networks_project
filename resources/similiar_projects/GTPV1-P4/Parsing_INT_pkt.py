@@ -1,8 +1,3 @@
-#sudo python Parsing_INT_pkt.py eth1       udp        54321       1000    0
-#sudo python Parsing_INT_pkt.py eth2       udp        54321       1000    0
-                            # interface, protocol, port_selected, rate, cycle
-
-
 import binascii
 from scapy.all import *
 import sys
@@ -16,7 +11,7 @@ hop_latency_1_max = 0
 hop_latency_2_max = 0
 switch_id = None
 
-#grafana push period
+# grafana push period
 period=0.5
 
 toDB=1
@@ -40,9 +35,7 @@ def send_data(hop_latency_avg_1, hop_latency_avg_2):
              'tags': {"switchID": switch_id ,"serviceID": "Flow1" },
              'time': ts,
              'fields': fields }]
-    #print fields
     client.write_points(json, time_precision='ms')
-    #time.sleep(polling)
   if hop_latency_2:
     fields={"hop_latency_avg": hop_latency_avg_2, "hop_latency_max": hop_latency_2_max}
     d = datetime.datetime.utcnow()
@@ -51,9 +44,7 @@ def send_data(hop_latency_avg_1, hop_latency_avg_2):
              'tags': {"switchID":switch_id ,"serviceID": "Flow2"},
              'time': ts,
              'fields': fields }]
-    #print fields
     client.write_points(json, time_precision='ms')
-    #time.sleep(polling)
 
 def pkt_callback(pkt):
     global hop_latency_1
@@ -119,8 +110,6 @@ def main():
         hop_latency_2 = 0
         hop_latency_1_max = 0
         hop_latency_2_max = 0
-        #print str(hop_latency_1_max) , str(hop_latency_2_max), str(hop_latency_1), str(hop_latency_2)
-        #print "cycle", n
         if n == cycle and n != 0:
           print('Interrupted! cycle number', n)
           sys.exit(1)
@@ -130,5 +119,4 @@ def main():
           sys.exit(1)
             
                         
-
 main()

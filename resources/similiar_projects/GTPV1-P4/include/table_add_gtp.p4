@@ -4,7 +4,6 @@
 #include "headers.p4"
 #include "defines.p4"
 
-
 control table_add_gtp(inout headers_t hdr,
                        inout local_metadata_t local_metadata,
                        inout standard_metadata_t standard_metadata) {

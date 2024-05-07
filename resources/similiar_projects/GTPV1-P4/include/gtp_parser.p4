@@ -1,4 +1,3 @@
-/* -*- P4_16 -*- */
 #ifndef __GTP_PARSER__
 #define __GTP_PARSER__
 

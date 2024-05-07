@@ -16,13 +16,7 @@ const bit<32> REPORT_MIRROR_SESSION_ID = 500;
 const bit<6> HW_ID = 1;
 const bit<8> REPORT_HDR_TTL = 64;
 
-//#ifdef TARGET_BMV2
-// These definitions are from:
-// https://github.com/jafingerhut/p4-guide/blob/master/v1model-special-ops/v1model-special-ops.p4
-
-// These definitions are derived from the numerical values of the enum
-// named "PktInstanceType" in the p4lang/behavioral-model source file
-// targets/simple_switch/simple_switch.h
+// Definitions derived from https://github.com/jafingerhut/p4-guide/blob/master/v1model-special-ops/v1model-special-ops.p4 and 
 // https://github.com/p4lang/behavioral-model/blob/master/targets/simple_switch/simple_switch.h#L126-L134
 
 const bit<32> BMV2_V1MODEL_INSTANCE_TYPE_NORMAL        = 0;

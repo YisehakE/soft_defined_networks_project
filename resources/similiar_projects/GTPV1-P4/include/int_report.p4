@@ -1,19 +1,3 @@
-/*
- * Copyright 2017-present Open Networking Foundation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 #ifndef __INT_REPORT__
 #define __INT_REPORT__
 
@@ -25,9 +9,6 @@ control process_int_report (
     inout standard_metadata_t standard_metadata) {
 
     action add_report_fixed_header(switch_id_t switch_id, seq_t seq) {
-        /* Device should include its own INT metadata as embedded,
-         * we'll not use local_report_header for this purpose.
-         */
         hdr.report_fixed_header.setValid();
         hdr.report_fixed_header.ver = 1;
         hdr.report_fixed_header.len = 4;
@@ -62,10 +43,9 @@ control process_int_report (
         hdr.report_ipv4.ihl = IPV4_IHL_MIN;
         hdr.report_ipv4.dscp = 6w0;
         hdr.report_ipv4.ecn = 2w0;
-        /* Total Len is report_ipv4_len + report_udp_len + report_fixed_hdr_len + ethernet_len + ipv4_totalLen */
+        /* The total length is report_ipv4_len + report_udp_len + report_fixed_hdr_len + ethernet_len + ipv4_totalLen */
         hdr.report_ipv4.len = (bit<16>) IPV4_MIN_HEAD_LEN + (bit<16>) UDP_HEADER_LEN + (bit<16>) REPORT_FIXED_HEADER_LEN +
                               (bit<16>) ETH_HEADER_LEN + (bit<16>) IPV4_MIN_HEAD_LEN + (bit<16>) UDP_HEADER_LEN;
-        /* Dont Fragment bit should be set */
         hdr.report_ipv4.identification = 0;
         hdr.report_ipv4.flags = 0;
         hdr.report_ipv4.frag_offset = 0;
@@ -74,7 +54,6 @@ control process_int_report (
         hdr.report_ipv4.src_addr = src_ip;
         hdr.report_ipv4.dst_addr = mon_ip;
 
-        //Report UDP Header
         hdr.report_udp.setValid();
         hdr.report_udp.src_port = 0;
         hdr.report_udp.dst_port = mon_port;

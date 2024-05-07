@@ -45,7 +45,6 @@ args = parser.parse_args()
 class SingleSwitchTopo(Topo):
     "Single switch connected to n (< 256) hosts."
     def __init__(self, sw_path, json_path, thrift_port, pcap_dump, n, **opts):
-        # Initialize topology and default options
         Topo.__init__(self, **opts)
 
         switch = self.addSwitch('s1',
